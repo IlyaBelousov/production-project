@@ -1,0 +1,19 @@
+@import "variables/global";
+@import "reset";
+@import "themes/normal";
+@import "themes/dark";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
+  font: var(--font-m);
+  background: var(--bg-color);
+  color: var(--primary-color);
+}

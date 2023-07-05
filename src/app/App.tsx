@@ -1,17 +1,23 @@
-import React, {Suspense, useContext, useState} from 'react';
+import React, {Suspense } from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
 import './styles/index.scss'
-import MainPageAsync from "./pages/MainPage/MainPage.async";
-import AboutPageAsync from "./pages/AboutPage/AboutPage.async";
-import {ThemeContext} from "./theme/ThemeContext";
-import {useTheme} from "./theme/useTheme";
+import {classNames} from "shared/lib/classNames/classNames";
+import {useTheme} from "app/providers/ThemeProvider";
+import {AboutPage} from "pages/AboutPage";
+import {MainPage} from "pages/MainPage";
 
 const App = () => {
 
-    const { theme, toggleTheme} = useTheme()
+    const { theme, toggleTheme} = useTheme();
+
+    const appClassNames = classNames({
+        className: 'app',
+        modes: {},
+        additionalClasses: [theme]
+    });
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={appClassNames}>
             <button onClick={toggleTheme}>TOGGLE</button>
             <Link to={'/main'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
@@ -19,10 +25,10 @@ const App = () => {
 
             <Routes>
                 <Route path={'/about'} element={
-                        <AboutPageAsync/>
+                        <AboutPage/>
                 }/>
                 <Route path={'/main'} element={
-                        <MainPageAsync/>
+                        <MainPage/>
                 }/>
 
             </Routes>

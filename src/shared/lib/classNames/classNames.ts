@@ -2,7 +2,7 @@ type Modes = Record<string, string | boolean>
 export const classNames = (params: {
     className: string
     modes?: Modes
-    additionalClasses: string[]
+    additionalClasses?: string[]
 }): string => {
 
     const {

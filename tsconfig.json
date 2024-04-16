@@ -18,5 +18,6 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "lib": ["es2017", "dom"]
 }

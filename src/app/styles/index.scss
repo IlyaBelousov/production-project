@@ -3,7 +3,6 @@
 @import "./themes/normal";
 @import "./themes/dark";
 
-
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +20,8 @@
 .content-page {
   display: flex;
 }
+
 .page-wrapper {
   flex-grow: 1;
-  padding: 20px
+  padding: 20px;
 }

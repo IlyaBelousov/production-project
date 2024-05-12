@@ -15,6 +15,6 @@ export const classNames = (params: {
     ...additionalClasses,
     ...Object.entries(modes)
       .filter(([_, value]) => Boolean(value))
-      .map(([className]) => className),
+      .map(([className, _]) => className),
   ].join(' ');
 };

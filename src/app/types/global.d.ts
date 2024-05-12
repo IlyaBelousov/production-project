@@ -19,12 +19,3 @@ declare module '*.svg' {
 }
 
 declare const __IS_DEV__: boolean;
-// @ts-ignore
-declare global {
-  type Entries<T> = {
-    [K in keyof T]: [K, T[K]];
-  }[keyof T][];
-  interface ObjectConstructor {
-    entries<T extends object>(o: T): Entries<T>
-  }
-}

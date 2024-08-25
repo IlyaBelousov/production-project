@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     // We don't always need only one export. For example - utils file, that can contains many exports
     'import/prefer-default-export': 'off',
+    'react/destructuring-assignment': 'off',
     // We don't need propTypes rules because we use TypeScript
     'react/prop-types': 'off',
     'react/require-default-props': 'off',

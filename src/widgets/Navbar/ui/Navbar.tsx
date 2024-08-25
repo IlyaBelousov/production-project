@@ -6,6 +6,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import style from './Navbar.module.scss';
+import {RoutePath} from "app/config";
 
 export const Navbar = (props:{
   className?: string
@@ -23,8 +24,8 @@ export const Navbar = (props:{
     })}
     >
       <div className={style.links}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/main" className={style.mainLink}>{t('mainPage')}</AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/about">{t('aboutPage')}</AppLink>
+        <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main} className={style.mainLink}>{t('mainPage')}</AppLink>
+        <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>{t('aboutPage')}</AppLink>
       </div>
 
     </div>

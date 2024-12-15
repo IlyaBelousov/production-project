@@ -1,4 +1,5 @@
 import React, { ErrorInfo, ReactNode } from 'react';
+import { AppError } from 'widgets/AppError';
 
 interface ErrorBoundaryProps {
   children: ReactNode
@@ -9,31 +10,37 @@ interface ErrorBoundaryState {
 }
 
 export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
-  }
+    constructor(props: ErrorBoundaryProps) {
+        super(props);
+        this.state = { hasError: false };
+    }
 
-  static getDerivedStateFromError(error:Error) {
+    static getDerivedStateFromError(error:Error) {
     // Update state so the next render will show the fallback UI.
-    return { hasError: true };
-  }
+        return { hasError: true };
+    }
 
-  componentDidCatch(error:Error, info: ErrorInfo) {
+    componentDidCatch(error:Error, info: ErrorInfo) {
     // Example "componentStack":
     //   in ComponentThatThrows (created by App)
     //   in ErrorBoundary (created by App)
     //   in div (created by App)
     //   in App
 
-    console.log('BIS error', error);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <h1>Something went wrong</h1>;
+        console.log('BIS error', error);
     }
 
-    return this.props.children;
-  }
+    render() {
+        const { hasError } = this.state;
+        const { children } = this.props;
+        if (hasError) {
+            return (
+                <div>
+                    <AppError />
+                </div>
+            );
+        }
+
+        return children;
+    }
 }

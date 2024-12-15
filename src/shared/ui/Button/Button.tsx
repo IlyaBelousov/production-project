@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 import style from './Button.module.scss';
 
@@ -11,23 +11,23 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: string
 }
 export const Button = (props: ButtonProps) => {
-  const {
-    className,
-    children,
-    theme,
-    ...otherProps
-  } = props;
+    const {
+        className,
+        children,
+        theme,
+        ...otherProps
+    } = props;
 
-  return (
-    <button
-      className={classNames({
-        className: style.Button,
-        modes: {},
-        additionalClasses: [className, style[theme]],
-      })}
-      {...otherProps}
-    >
-      {children}
-    </button>
-  );
+    return (
+        <button
+            className={classNames({
+                className: style.Button,
+                modes: {},
+                additionalClasses: [className, style[theme]],
+            })}
+            {...otherProps}
+        >
+            {children}
+        </button>
+    );
 };

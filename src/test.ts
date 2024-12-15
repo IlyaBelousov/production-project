@@ -1,3 +1,3 @@
 export function someFn(arg: number) {
-  console.log('BIS someFn', arg);
+    console.log('BIS someFn', arg);
 }

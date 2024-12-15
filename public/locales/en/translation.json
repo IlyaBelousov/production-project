@@ -2,5 +2,8 @@
   "test": "Test",
   "mainPage": "Main Page",
   "aboutPage": "About Page",
-  "language": "Русский"
+  "language": "Русский",
+  "somethingWentWrong": "Something went wrong",
+  "reloadPage": "Reload page",
+  "triggerBug": "Trigger bug"
 }

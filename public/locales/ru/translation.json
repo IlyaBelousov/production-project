@@ -2,5 +2,8 @@
   "test": "Тест",
   "mainPage": "Главная",
   "aboutPage": "О сайте",
-  "language": "English"
+  "language": "English",
+  "somethingWentWrong": "Что то пошло не так",
+  "reloadPage": "Обновить страницу",
+  "triggerBug": "Триггернуть баг"
 }

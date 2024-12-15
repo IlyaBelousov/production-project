@@ -4,17 +4,17 @@ export const classNames = (params: {
   modes?: Modes
   additionalClasses?: string[]
 }): string => {
-  const {
-    className,
-    modes,
-    additionalClasses,
-  } = params;
+    const {
+        className,
+        modes,
+        additionalClasses,
+    } = params;
 
-  return [
-    className,
-    ...additionalClasses,
-    ...Object.entries(modes)
-      .filter(([_, value]) => Boolean(value))
-      .map(([className, _]) => className),
-  ].join(' ');
+    return [
+        className,
+        ...additionalClasses,
+        ...Object.entries(modes)
+            .filter(([_, value]) => Boolean(value))
+            .map(([className, _]) => className),
+    ].join(' ');
 };

@@ -9,7 +9,7 @@ export const AppError = () => {
         location.reload();
     };
     return (
-        <div className={''}>
+        <div className="">
             {t('somethingWentWrong')}
             <Button onClick={onClick}>
                 {t('reloadPage')}

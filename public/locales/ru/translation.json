@@ -5,5 +5,6 @@
   "language": "English",
   "somethingWentWrong": "Что то пошло не так",
   "reloadPage": "Обновить страницу",
-  "triggerBug": "Триггернуть баг"
+  "triggerBug": "Триггернуть баг",
+  "notFound": "Не найдено"
 }

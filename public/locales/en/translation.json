@@ -5,5 +5,6 @@
   "language": "Русский",
   "somethingWentWrong": "Something went wrong",
   "reloadPage": "Reload page",
-  "triggerBug": "Trigger bug"
+  "triggerBug": "Trigger bug",
+  "notFound": "Not found"
 }

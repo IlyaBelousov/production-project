@@ -7,14 +7,17 @@ export const classNames = (params: {
     const {
         className,
         modes,
-        additionalClasses,
+        additionalClasses = [],
     } = params;
+
+    const correctedModes = modes ? [...Object.entries(modes)
+        .filter(([_, value]) => Boolean(value))
+        .map(([className, _]) => className)]
+        : [];
 
     return [
         className,
         ...additionalClasses,
-        ...Object.entries(modes)
-            .filter(([_, value]) => Boolean(value))
-            .map(([className, _]) => className),
+        ...correctedModes,
     ].join(' ');
 };

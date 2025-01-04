@@ -7,13 +7,15 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-       "*": ["./src/*"],
+       "*": ["./src/*"]
     },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "module": "ESNext"
   },
+  "include": ["./config/jest/jest-setup.js", "src"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

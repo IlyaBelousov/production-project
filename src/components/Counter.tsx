@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import styles from './Counter.module.scss';
 
 const Counter = () => {
     const [counter, setCounter] = useState(0);
+    const { t } = useTranslation();
 
     return (
         <>
@@ -33,7 +35,7 @@ const Counter = () => {
                 }}
                 onClick={() => setCounter((prev) => prev + 1)}
             >
-                Count
+                {t('count')}
             </div>
         </>
     );

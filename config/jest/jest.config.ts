@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -85,6 +86,7 @@ const config: Config = {
 
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestComponent.tsx'),
     },
 
     // An array of file extensions your modules use
@@ -197,6 +199,9 @@ const config: Config = {
     transformIgnorePatterns: [
         'node_modules/(?!variables/.*)',
     ],
+    globals: {
+        __DEV__: true,
+    },
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,

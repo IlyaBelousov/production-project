@@ -13,7 +13,6 @@ export const TriggerExceptionButton = () => {
         if (error) throw new Error();
     }, [error]);
 
-    console.log('BIS styles.triggerButton', styles.triggerButton);
     const onClick = () => {
         setError(true);
     };

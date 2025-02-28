@@ -16,22 +16,24 @@ export const Sidebar = (props: SidebarProps) => {
         className,
     } = props;
 
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
     return (
-        <div className={classNames({
-            className: style.Sidebar,
-            modes: {
-                [style.collapsed]: collapsed,
-            },
-            additionalClasses: [className],
-        })}
+        <div
+            data-testid="sidebar"
+            className={classNames({
+                className: style.Sidebar,
+                modes: {
+                    [style.collapsed]: collapsed,
+                },
+                additionalClasses: [className],
+            })}
         >
-            <Button onClick={onToggle} theme={ThemeButton.CLEAR}>
+            <Button data-testid="toggleButton" onClick={onToggle} theme={ThemeButton.CLEAR}>
                 TOGGLE
             </Button>
 

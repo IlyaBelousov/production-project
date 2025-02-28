@@ -16,6 +16,14 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
+    overrides: [
+        {
+            files: ['*.test.tsx'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
     plugins: [
         'react',
         '@typescript-eslint',

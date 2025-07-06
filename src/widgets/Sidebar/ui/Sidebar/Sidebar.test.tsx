@@ -1,5 +1,4 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { expect, describe, test } from '@jest/globals';
 import { Sidebar } from 'widgets/Sidebar';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 

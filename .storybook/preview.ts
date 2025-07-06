@@ -1,0 +1,17 @@
+import type {Preview} from '@storybook/react-webpack5'
+import {StyleDecorator, ThemeDecorator} from "../src/shared/config/storybook";
+import {Theme} from "../src/app/providers/ThemeProvider";
+
+const preview: Preview = {
+  parameters: {
+    controls: {
+      matchers: {
+       color: /(background|color)$/i,
+       date: /Date$/i,
+      },
+    },
+  },
+  decorators:[StyleDecorator, ThemeDecorator(Theme.LIGHT)]
+};
+
+export default preview;

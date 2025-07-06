@@ -101,7 +101,7 @@ const config: Config = {
         'node',
     ],
 
-    setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.js'],
+    setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -200,7 +200,7 @@ const config: Config = {
         'node_modules/(?!variables/.*)',
     ],
     globals: {
-        __DEV__: true,
+        __IS_DEV__: true,
     },
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them

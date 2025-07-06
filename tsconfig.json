@@ -13,12 +13,15 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "module": "ESNext"
+    "module": "ESNext",
+    "types": ["jest"],
   },
-  "include": ["./config/jest/jest-setup.js", "src"],
+  "include": [
+    "./config/jest/jest-setup.ts", "src",
+  ],
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
     }
   },
   "lib": ["es2017"]

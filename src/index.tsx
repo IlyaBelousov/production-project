@@ -12,12 +12,14 @@ import 'shared/config/i18n/i18n';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-root.render(<BrowserRouter>
-    <ErrorBoundary>
-        <Suspense fallback="">
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </Suspense>
-    </ErrorBoundary>
-</BrowserRouter>);
+root.render(
+    <BrowserRouter>
+        <ErrorBoundary>
+            <Suspense fallback="">
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </Suspense>
+        </ErrorBoundary>
+    </BrowserRouter>,
+);

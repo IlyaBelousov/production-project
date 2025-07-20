@@ -1,5 +1,4 @@
 import webpack, { RuleSetRule } from "webpack";
-import { buildCssLoader } from "../config/build/loaders/buildCssLoader";
 import path from "path";
 import { BuildPaths } from "../config/build/types/config";
 
@@ -12,6 +11,12 @@ export default ({config}: webpack.Configuration) => {
     };
     config.resolve.modules.push(paths.src);
     config.resolve.extensions.push('.ts', '.tsx');
+
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            '__IS_DEV__': process.env.NODE_ENV === 'development'
+        })
+    );
 
     // eslint-disable-next-line no-param-reassign
     config.module.rules = config.module.rules.map((rule: RuleSetRule) => {

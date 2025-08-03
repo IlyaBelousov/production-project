@@ -14,7 +14,21 @@
   position: absolute;
   bottom: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 0 var(--padding-s) 0 var(--padding-s);
   width: 100%;
+}
+.switchers.collapsedSwitchers {
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle {
+  position: absolute;
+  bottom: 32px;
+  right: -33px;
+  opacity: 0.5;
+}
+.toggle:hover{
+  opacity: 1;
 }

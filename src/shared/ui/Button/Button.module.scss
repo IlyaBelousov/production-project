@@ -9,14 +9,33 @@
   background: none;
   outline: none;
   color: var(--primary-color);
-  font-size: var(--font-size-m);
 }
 
 .outline {
   border: 1px solid;
-  padding: 12px 20px;
   border-color: var(--primary-color);
   color: var(--primary-color);
   background: none;
+}
+
+.background {
+  border: none;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+.invertedBackground {
+  border: none;
+  color: var(--inverted-primary-color);
+  background-color: var(--inverted-bg-color);
+}
+
+.sizeL {
+  font-size: var(--font-size-l);
+  padding: var(--padding-l);
+}
+
+.sizeM {
   font-size: var(--font-size-m);
+  padding: var(--padding-m);
 }

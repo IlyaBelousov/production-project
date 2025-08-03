@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui';
+import { Button, ThemeButton } from 'shared/ui';
 
-export const LangSwitcher = () => {
+export const LangSwitcher = ({ short }:{short?: boolean}) => {
     const { t, i18n } = useTranslation();
 
     const isLanguageRu = i18n.language === 'ru';
@@ -11,12 +11,10 @@ export const LangSwitcher = () => {
     };
     return (
         <Button
+            theme={ThemeButton.CLEAR}
             onClick={changeLanguage}
-            style={{
-                marginLeft: 14,
-            }}
         >
-            {t('language')}
+            {t(short ? 'shortLang' : 'language')}
         </Button>
     );
 };

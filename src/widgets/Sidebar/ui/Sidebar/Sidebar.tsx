@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { LangSwitcher } from 'widgets/LangSwitcher';
@@ -33,15 +33,25 @@ export const Sidebar = (props: SidebarProps) => {
                 additionalClasses: [className],
             })}
         >
-            <Button data-testid="toggleButton" onClick={onToggle} theme={ThemeButton.CLEAR}>
-                TOGGLE
+            <Button
+                className={style.toggle}
+                size={ButtonSize.L}
+                data-testid="toggleButton"
+                onClick={onToggle}
+                theme={ThemeButton.INVERTED_BACKGROUND}
+            >
+                {collapsed ? '>' : '<'}
             </Button>
 
             <TriggerExceptionButton />
 
-            <div className={style.switchers}>
+            <div className={classNames({
+                className: style.switchers,
+                additionalClasses: [collapsed && style.collapsedSwitchers],
+            })}
+            >
                 <ThemeSwitcher />
-                <LangSwitcher />
+                <LangSwitcher short={collapsed} />
             </div>
 
         </div>

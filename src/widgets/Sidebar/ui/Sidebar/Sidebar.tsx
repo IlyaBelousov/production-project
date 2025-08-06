@@ -5,6 +5,10 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { TriggerExceptionButton } from 'widgets/Sidebar/ui/TriggerExceptionButton/TriggerExceptionButton';
+import { AppLink } from 'shared/ui';
+import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'app/config';
+import { useTranslation } from 'react-i18next';
 import style from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -15,6 +19,8 @@ export const Sidebar = (props: SidebarProps) => {
     const {
         className,
     } = props;
+
+    const { t } = useTranslation();
 
     const [collapsed, setCollapsed] = useState(false);
 
@@ -33,6 +39,12 @@ export const Sidebar = (props: SidebarProps) => {
                 additionalClasses: [className],
             })}
         >
+            <div className={style.links}>
+                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main} className={style.mainLink}>
+                    {t('mainPage')}
+                </AppLink>
+                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>{t('aboutPage')}</AppLink>
+            </div>
             <Button
                 className={style.toggle}
                 size={ButtonSize.L}

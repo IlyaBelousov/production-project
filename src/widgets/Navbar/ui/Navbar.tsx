@@ -1,9 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink } from 'shared/ui';
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'app/config';
+import { Button, Modal, ThemeButton } from 'shared/ui';
+import React, { useCallback, useState } from 'react';
 
 import style from './Navbar.module.scss';
 
@@ -14,7 +11,12 @@ export const Navbar = (props:{
         className,
     } = props;
 
-    const { t } = useTranslation();
+    const [isOpenedAuthModal, setIsOpenedAuthModal] = useState(false);
+
+    const handleToggleModal = useCallback(() => {
+        setIsOpenedAuthModal((prev) => !prev);
+    }, []);
+
     return (
         <div className={classNames({
             className: style.Navbar,
@@ -22,12 +24,12 @@ export const Navbar = (props:{
             additionalClasses: [className],
         })}
         >
-            <div className={style.links}>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main} className={style.mainLink}>
-                    {t('mainPage')}
-                </AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>{t('aboutPage')}</AppLink>
-            </div>
+            <Button onClick={handleToggleModal} className={style.signInButton} theme={ThemeButton.CLEAR}>
+                ВОЙТИ
+            </Button>
+            <Modal isOpen={isOpenedAuthModal} onClose={handleToggleModal}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos expedita inventore minima ratione? Aperiam consequatur eius iusto molestias nisi quae quis soluta veritatis.
+            </Modal>
 
         </div>
     );

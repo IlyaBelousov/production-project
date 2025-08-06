@@ -1,0 +1,24 @@
+.modal {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: var(--z-index-modal);
+}
+
+.overlay {
+  background-color: var(--overlay-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  border-radius: 12px;
+  padding: 24px;
+  background-color: var(--modal-bg-color);
+  user-select: none;
+}

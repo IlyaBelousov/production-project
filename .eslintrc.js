@@ -17,6 +17,7 @@ module.exports = {
         'plugin:storybook/recommended',
         'plugin:storybook/recommended',
         'plugin:storybook/recommended',
+        'plugin:react-hooks/recommended-legacy',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {

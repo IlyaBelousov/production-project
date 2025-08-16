@@ -18,8 +18,8 @@ export const Counter = () => {
     return (
         <div>
             <h1 data-testid={'counter-value'}>{value}</h1>
-            <Button onClick={increment} theme={ThemeButton.CLEAR}>INCREMENT</Button>
-            <Button onClick={decrement} theme={ThemeButton.CLEAR}>DECREMENT</Button>
+            <Button data-testid={'increment-btn'} onClick={increment} theme={ThemeButton.CLEAR}>INCREMENT</Button>
+            <Button data-testid={'decrement-btn'} onClick={decrement} theme={ThemeButton.CLEAR}>DECREMENT</Button>
         </div>
     );
 };

@@ -6,7 +6,6 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
-        'airbnb',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
         'plugin:storybook/recommended',
@@ -35,6 +34,7 @@ module.exports = {
     }],
     plugins: ['react', '@typescript-eslint', 'i18next'],
     rules: {
+        "object-curly-spacing": ["error", "always"],
         'no-restricted-globals': 'warn',
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
@@ -63,6 +63,7 @@ module.exports = {
             ignoreComments: true,
             code: 120,
         }],
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,

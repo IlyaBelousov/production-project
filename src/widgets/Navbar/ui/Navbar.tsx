@@ -3,6 +3,7 @@ import { Button, Modal, ThemeButton } from 'shared/ui';
 import React, { useCallback, useState } from 'react';
 
 import style from './Navbar.module.scss';
+import { Counter } from "entities/Counter";
 
 export const Navbar = (props:{
   className?: string
@@ -24,11 +25,16 @@ export const Navbar = (props:{
             additionalClasses: [className],
         })}
         >
+            <Counter />
+
             <Button onClick={handleToggleModal} className={style.signInButton} theme={ThemeButton.CLEAR}>
-                ВОЙТИ
+                {'ВОЙТИ'}
             </Button>
             <Modal isOpen={isOpenedAuthModal} onClose={handleToggleModal}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos expedita inventore minima ratione? Aperiam consequatur eius iusto molestias nisi quae quis soluta veritatis.
+                {'Lorem ipsum dolor sit amet, \n' +
+                    '                consectetur adipisicing elit. Dignissimos expedita\n' +
+                    '                inventore minima ratione? Aperiam consequatur eius iusto \n' +
+                    '                molestias nisi quae quis soluta veritatis.'}
             </Modal>
 
         </div>

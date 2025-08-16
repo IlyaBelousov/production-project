@@ -87,6 +87,11 @@ const config: Config = {
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestComponent.tsx'),
+        "^app/(.*)$": "<rootDir>/src/app/$1",
+        "^entities/(.*)$": "<rootDir>/src/entities/$1",
+        "^features/(.*)$": "<rootDir>/src/features/$1",
+        "^shared/(.*)$": "<rootDir>/src/shared/$1",
+        "^widgets/(.*)$": "<rootDir>/src/widgets/$1",
     },
 
     // An array of file extensions your modules use

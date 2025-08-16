@@ -37,8 +37,6 @@ export const Modal = (props: ModalProps) => {
         };
     }, [handleKeyDown]);
 
-    console.log('BIS isOpen', isOpen);
-
     return isOpen && (
         <Portal>
             <div className={classNames({ className: cls.modal, additionalClasses: [className] })}>

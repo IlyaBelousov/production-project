@@ -4,6 +4,7 @@
   position: fixed;
   right: 0;
   top: 0;
+  color: var(--primary-color);
   z-index: var(--z-index-modal);
 }
 
@@ -19,6 +20,6 @@
 .content {
   border-radius: 12px;
   padding: 24px;
-  background-color: var(--modal-bg-color);
+  background-color: var(--inverted-bg-color);
   user-select: none;
 }

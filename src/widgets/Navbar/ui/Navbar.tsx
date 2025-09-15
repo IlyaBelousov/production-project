@@ -1,9 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, Modal, ThemeButton } from 'shared/ui';
+import { Button, ThemeButton } from 'shared/ui';
 import React, { useCallback, useState } from 'react';
 
 import style from './Navbar.module.scss';
 import { Counter } from "entities/Counter";
+import { LoginModal } from "features/auth";
 
 export const Navbar = (props:{
   className?: string
@@ -14,9 +15,13 @@ export const Navbar = (props:{
 
     const [isOpenedAuthModal, setIsOpenedAuthModal] = useState(false);
 
-    const handleToggleModal = useCallback(() => {
-        setIsOpenedAuthModal((prev) => !prev);
+    const handleTOpenAuthModal = useCallback(() => {
+        setIsOpenedAuthModal(true);
     }, []);
+
+    const handleCloseAuthModal = () => {
+        setIsOpenedAuthModal(false)
+    }
 
     return (
         <div className={classNames({
@@ -27,15 +32,10 @@ export const Navbar = (props:{
         >
             <Counter />
 
-            <Button onClick={handleToggleModal} className={style.signInButton} theme={ThemeButton.CLEAR}>
+            <Button onClick={handleTOpenAuthModal} className={style.signInButton} theme={ThemeButton.CLEAR}>
                 {'ВОЙТИ'}
             </Button>
-            <Modal isOpen={isOpenedAuthModal} onClose={handleToggleModal}>
-                {'Lorem ipsum dolor sit amet, \n' +
-                    '                consectetur adipisicing elit. Dignissimos expedita\n' +
-                    '                inventore minima ratione? Aperiam consequatur eius iusto \n' +
-                    '                molestias nisi quae quis soluta veritatis.'}
-            </Modal>
+            <LoginModal isOpen={isOpenedAuthModal} onClose={handleCloseAuthModal}/>
 
         </div>
     );

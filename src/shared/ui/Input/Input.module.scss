@@ -1,0 +1,26 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.input {
+  border-radius: 20px;
+  height: 44px;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 12px;
+  color: var(--inverted-primary-color);
+  font-weight: 400;
+  font-size: 18px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.label {
+  color: var(--inverted-primary-color);
+  font-weight: 400;
+  font-size: 18px;
+}

@@ -8,5 +8,8 @@
   "triggerBug": "Триггернуть баг",
   "notFound": "Не найдено",
   "count": "Счет",
-  "shortLang": "En"
+  "shortLang": "En",
+  "login": "Войти",
+  "userName": "Имя пользователя",
+  "password": "Пароль"
 }

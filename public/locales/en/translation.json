@@ -8,5 +8,8 @@
   "triggerBug": "Trigger bug",
   "notFound": "Not found",
   "count": "count",
-  "shortLang": "Ру"
+  "shortLang": "Ру",
+  "login": "Login",
+  "userName": "User name",
+  "password": "Password"
 }

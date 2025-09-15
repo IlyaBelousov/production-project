@@ -7,12 +7,14 @@ import { Counter } from "entities/Counter";
 describe('Counter.test', () => {
     test('Counter.test test', () => {
         componentRender(<Counter />, {
+            //@ts-ignore
             initialState: { counter: { value: 10 } }
         })
         expect(screen.getByTestId('counter-value')).toBeInTheDocument();
     });
     test('Counter.test increment', () => {
         componentRender(<Counter />, {
+            //@ts-ignore
             initialState: { counter: { value: 10 } }
         })
         fireEvent.click(screen.getByTestId('increment-btn'))
@@ -20,6 +22,7 @@ describe('Counter.test', () => {
     });
     test('Counter.test decrement', () => {
         componentRender(<Counter />, {
+            //@ts-ignore
             initialState: { counter: { value: 10 } }
         })
         fireEvent.click(screen.getByTestId('decrement-btn'))
